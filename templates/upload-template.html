@@ -1,0 +1,32 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Upload Image</title>
+    {% load static %} <link rel="icon"href="{% static 'main/media/icon.png' %}">
+</head>
+<body>
+
+<div align="center">
+    <h1>Upload Form Sketch to Generate<br> Your Own Web Forms</h1>
+<div style="align:center; border: solid 4px black; padding: 10px; width:540px;">
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Upload</button>
+    </form>
+</div>
+
+    <div style="width:555px; border: solid 4px black; height:600px; margin-top:20px;">
+        <h2>Sample Element Images</h2>
+        {% load static %} <img src="{% static 'main/media/upload_alert.jpg' %}" alt="home" />
+    </div>
+
+    <div style="width:540px; border: solid 4px black; height:20px; margin-top:20px; padding:10px;">
+        <b>*The sketches you upload will be created in their actual size and position!</b>
+    </div>
+
+</div>
+</body>
+</html>
